@@ -1,0 +1,297 @@
+fileVersion: 1
+id: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+name: FCT_SALES
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: Unified sales lines for FR, DE and ES - single source of truth for sales
+  isMultisource: false
+  locationName: GOLD
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8e98bd26-e5a0-40ba-a39b-af21cc5d9c4d
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isBusinessKey: true
+        name: SALE_LINE_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: SALE_LINE_KEY
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7bd8bb7b-8014-4553-a003-4e98cd8824a8
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: VARCHAR(2)
+        description: ""
+        name: COUNTRY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: COUNTRY_CODE
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc492a77-5c78-43df-ad38-7fe15a85f49c
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: TICKET_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: TICKET_KEY
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 919b91a9-1f4e-406a-9c6d-7f497e1414d9
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: NUMBER(5,0)
+        description: ""
+        name: LINE_NO
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: LINE_NO
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dbc147ed-3ccd-44c2-8af6-7064543d7338
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: DATE
+        description: ""
+        name: SALE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: SALE_DATE
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba0856de-eee1-43d0-9e9c-76b6b1458954
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: TIME
+        description: ""
+        name: SALE_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: SALE_TIME
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 02bc2e4b-1cad-4d6e-b777-ec8c5282623b
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: STORE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: STORE_CODE
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c42b5faa-59b1-49b2-b233-2863046b67e2
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SKU
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: SKU
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 86ab1229-ce7e-46be-91bb-b9a10330ab21
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: STAFF_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: STAFF_ID
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47750e6e-5a7a-4bd2-9d0f-6f4b0fd5e8e5
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: NUMBER(10,0)
+        description: ""
+        name: QUANTITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: QUANTITY
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: be01fe86-015f-4dff-977a-e5c271474ba1
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: NUMBER(5,4)
+        description: ""
+        name: DISCOUNT_RATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: DISCOUNT_RATE
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: da0399b5-ff67-477b-a2c7-e60d7801c7ab
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: NUMBER(5,4)
+        description: ""
+        name: VAT_RATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: VAT_RATE
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8a93afe0-9cef-49f3-8986-e1adb5aca3ef
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: AMOUNT_INCL_VAT_EUR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: AMOUNT_INCL_VAT_EUR
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f089c5a-e8ac-40c9-b113-0b25dc59426d
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: NET_AMOUNT_EXCL_VAT_EUR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: NET_AMOUNT_EXCL_VAT_EUR
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9330e50d-25ac-4f71-9463-05f2b778d358
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: IS_RETURN
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: IS_RETURN
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d66e65cb-929f-4429-8807-525b33285d3d
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: TIMESTAMP_LTZ
+        description: ""
+        name: LOADED_TS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: LOADED_TS
+                stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 34d3ba54-e983-41f7-93dd-29ca7bf098e2
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 94fa77b4-5482-4343-920b-fe20a900fe32
+          stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_SALES: ae32a143-f371-42af-9a30-a507382a76f8
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SILVER
+            nodeName: STG_SALES
+        join:
+          joinCondition: FROM {{ ref('SILVER', 'STG_SALES') }} "STG_SALES"
+        name: FCT_SALES
+        noLinkRefs: []
+  name: FCT_SALES
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node
