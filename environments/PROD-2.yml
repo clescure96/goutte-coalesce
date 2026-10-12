@@ -1,0 +1,14 @@
+fileVersion: 1
+id: "2"
+mappingDefinitions:
+  GOLD:
+    database: GOUTTE_PROD
+    schema: GOLD
+  RAW:
+    database: GOUTTE_RAW
+    schema: POS
+  SILVER:
+    database: GOUTTE_PROD
+    schema: SILVER
+name: PROD
+type: Environment

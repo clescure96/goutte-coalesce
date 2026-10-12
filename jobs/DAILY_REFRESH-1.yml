@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "1"
+includeSelector: "{ location: SILVER } OR { location: GOLD }"
+name: DAILY_REFRESH
+type: Job

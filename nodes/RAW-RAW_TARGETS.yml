@@ -1,0 +1,111 @@
+fileVersion: 1
+id: 239ae334-fa82-4b45-9a61-bdfdb5ae955f
+name: RAW_TARGETS
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: RAW
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 906027e0-e457-4994-8363-46929e4cd630
+          stepCounter: 239ae334-fa82-4b45-9a61-bdfdb5ae955f
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: STORE_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 28571860-c04f-4515-9325-0c32adef487f
+          stepCounter: 239ae334-fa82-4b45-9a61-bdfdb5ae955f
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: TARGET_MONTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 40e1efaa-1aea-4434-9213-06e16775e437
+          stepCounter: 239ae334-fa82-4b45-9a61-bdfdb5ae955f
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: TARGET_NET_REVENUE_EUR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd393ec1-75a0-434a-a0e9-792ede6d97b1
+          stepCounter: 239ae334-fa82-4b45-9a61-bdfdb5ae955f
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: _FILE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 113e07bf-faf5-4969-972b-3bc50b971a3d
+          stepCounter: 239ae334-fa82-4b45-9a61-bdfdb5ae955f
+        config: {}
+        dataType: TIMESTAMP_LTZ(9)
+        defaultValue: ""
+        description: ""
+        name: _LOADED_AT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: RAW_TARGETS
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
