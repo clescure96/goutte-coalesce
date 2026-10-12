@@ -20,17 +20,14 @@ operation:
   metadata:
     appliedNodeTests: []
     columns:
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 6322017c-f8aa-435e-b8d0-239bf403c728
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: NUMBER
         defaultValue: ""
-        description: ""
+        description: Surrogate key of the staff dimension
         isSurrogateKey: true
         name: DIM_STG_STAFF_KEY
         nullable: true
@@ -43,7 +40,7 @@ operation:
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Unique staff member identifier
         isBusinessKey: true
         name: STAFF_ID
         nullable: true
@@ -58,7 +55,7 @@ operation:
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Store the staff member is assigned to
         name: STORE_CODE
         nullable: true
         sourceColumnReferences:
@@ -72,7 +69,7 @@ operation:
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Staff first name (PII)
         name: FIRST_NAME
         nullable: true
         sourceColumnReferences:
@@ -86,7 +83,7 @@ operation:
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Staff last name (PII)
         name: LAST_NAME
         nullable: true
         sourceColumnReferences:
@@ -100,7 +97,7 @@ operation:
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Staff email address (PII)
         name: EMAIL
         nullable: true
         sourceColumnReferences:
@@ -114,7 +111,7 @@ operation:
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Staff phone number (PII)
         name: PHONE
         nullable: true
         sourceColumnReferences:
@@ -128,7 +125,7 @@ operation:
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Job title/role
         name: JOB_TITLE
         nullable: true
         sourceColumnReferences:
@@ -142,7 +139,7 @@ operation:
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: DATE
-        description: ""
+        description: Date the staff member was hired
         name: HIRE_DATE
         nullable: true
         sourceColumnReferences:
@@ -150,102 +147,84 @@ operation:
               - columnCounter: HIRE_DATE
                 stepCounter: 2a98c573-420f-4312-a611-8ca8895cbb76
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 65930d40-fc0c-4f2b-9fe1-296dbe2496bd
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: NUMBER
         defaultValue: ""
-        description: ""
+        description: SCD2 version number of the row
         isSystemVersion: true
         name: SYSTEM_VERSION
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: b529bf65-4984-4358-99da-637adbb37717
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: VARCHAR
         defaultValue: ""
-        description: ""
+        description: "'Y' on the current version, 'N' on expired versions"
         isSystemCurrentFlag: true
         name: SYSTEM_CURRENT_FLAG
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 6bf3d000-5a77-4815-9485-1ecb3d6a5f39
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp this version became effective
         isSystemStartDate: true
         name: SYSTEM_START_DATE
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 515e875a-bd9b-43e4-90d9-0f5a5ef441a3
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp this version was expired (far-future while current)
         isSystemEndDate: true
         name: SYSTEM_END_DATE
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 482040b9-9bb1-4bcf-832c-b9e16211a396
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp the row was first created
         isSystemCreateDate: true
         name: SYSTEM_CREATE_DATE
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 4a3c74f8-fd6b-467c-88ed-3ed0fe6e85d4
           stepCounter: b2296308-3fef-4b45-8c7b-deea99c2f8e3
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp the row was last updated
         isSystemUpdateDate: true
         name: SYSTEM_UPDATE_DATE
         nullable: true
@@ -253,7 +232,10 @@ operation:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
     cteString: ""
+    description: ""
+    destinationName: ""
     enabledColumnTestIDs: []
+    materializationOption: ""
     sourceMapping:
       - aliases:
           STG_STAFF: 2a98c573-420f-4312-a611-8ca8895cbb76

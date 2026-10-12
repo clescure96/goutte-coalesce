@@ -15,17 +15,14 @@ operation:
   metadata:
     appliedNodeTests: []
     columns:
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 113f05ab-08fe-48b0-8b6b-ab973b1181d5
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: NUMBER
         defaultValue: ""
-        description: ""
+        description: Surrogate key of the product dimension
         isSurrogateKey: true
         name: DIM_STG_PRODUCTS_KEY
         nullable: true
@@ -38,7 +35,7 @@ operation:
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Stock keeping unit; unique product identifier
         isBusinessKey: true
         name: SKU
         nullable: true
@@ -53,7 +50,7 @@ operation:
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Style code grouping SKUs of the same design
         name: STYLE_CODE
         nullable: true
         sourceColumnReferences:
@@ -67,7 +64,7 @@ operation:
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Product display name
         name: PRODUCT_NAME
         nullable: true
         sourceColumnReferences:
@@ -81,7 +78,7 @@ operation:
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Product category
         name: CATEGORY
         nullable: true
         sourceColumnReferences:
@@ -95,7 +92,7 @@ operation:
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Target gender
         name: GENDER
         nullable: true
         sourceColumnReferences:
@@ -109,7 +106,7 @@ operation:
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Collection the product belongs to
         name: COLLECTION
         nullable: true
         sourceColumnReferences:
@@ -123,7 +120,7 @@ operation:
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Season the product belongs to
         name: SEASON
         nullable: true
         sourceColumnReferences:
@@ -137,7 +134,7 @@ operation:
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Product color
         name: COLOR
         nullable: true
         sourceColumnReferences:
@@ -151,7 +148,7 @@ operation:
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Product size
         name: SIZE
         nullable: true
         sourceColumnReferences:
@@ -165,7 +162,7 @@ operation:
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: NUMBER(10,2)
-        description: ""
+        description: List/retail price in EUR, including VAT
         name: LIST_PRICE_INCL_VAT_EUR
         nullable: true
         sourceColumnReferences:
@@ -179,7 +176,7 @@ operation:
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: NUMBER(10,2)
-        description: ""
+        description: Unit cost in EUR, excluding VAT
         name: UNIT_COST_EXCL_VAT_EUR
         nullable: true
         sourceColumnReferences:
@@ -187,102 +184,84 @@ operation:
               - columnCounter: UNIT_COST_EXCL_VAT_EUR
                 stepCounter: e54674a2-41ca-4bf3-b25d-2704ad69a342
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 7294402a-46b8-49f4-b645-48daab9793f8
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: NUMBER
         defaultValue: ""
-        description: ""
+        description: SCD2 version number of the row
         isSystemVersion: true
         name: SYSTEM_VERSION
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: f0ba7768-75f7-4284-8434-04e5495bca63
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: VARCHAR
         defaultValue: ""
-        description: ""
+        description: "'Y' on the current version, 'N' on expired versions"
         isSystemCurrentFlag: true
         name: SYSTEM_CURRENT_FLAG
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 0ff1be06-d84e-47df-92bd-da48b90fee68
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp this version became effective
         isSystemStartDate: true
         name: SYSTEM_START_DATE
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: adc17980-bca3-45ea-a43d-fb10ffeec238
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp this version was expired (far-future while current)
         isSystemEndDate: true
         name: SYSTEM_END_DATE
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: d648d090-cbeb-4b96-a1c9-d4708165b167
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp the row was first created
         isSystemCreateDate: true
         name: SYSTEM_CREATE_DATE
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 402c3605-e6fb-4567-bd34-2093db65253c
           stepCounter: 03686d7a-ba32-4f17-b2de-27ee27bc3275
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp the row was last updated
         isSystemUpdateDate: true
         name: SYSTEM_UPDATE_DATE
         nullable: true
@@ -290,7 +269,10 @@ operation:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
     cteString: ""
+    description: ""
+    destinationName: ""
     enabledColumnTestIDs: []
+    materializationOption: ""
     sourceMapping:
       - aliases:
           STG_PRODUCTS: e54674a2-41ca-4bf3-b25d-2704ad69a342

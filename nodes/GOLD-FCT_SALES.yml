@@ -21,7 +21,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: VARCHAR
-        description: ""
+        description: "Unique sale line key: country-prefixed ticket number and line position"
         isBusinessKey: true
         name: SALE_LINE_KEY
         nullable: true
@@ -36,7 +36,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: VARCHAR(2)
-        description: ""
+        description: Country of the selling store
         name: COUNTRY_CODE
         nullable: true
         sourceColumnReferences:
@@ -50,7 +50,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: VARCHAR
-        description: ""
+        description: Country-prefixed receipt/ticket identifier
         name: TICKET_KEY
         nullable: true
         sourceColumnReferences:
@@ -64,7 +64,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: NUMBER(5,0)
-        description: ""
+        description: Line position within the ticket
         name: LINE_NO
         nullable: true
         sourceColumnReferences:
@@ -78,7 +78,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: DATE
-        description: ""
+        description: Date of sale
         name: SALE_DATE
         nullable: true
         sourceColumnReferences:
@@ -92,7 +92,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: TIME
-        description: ""
+        description: Time of sale
         name: SALE_TIME
         nullable: true
         sourceColumnReferences:
@@ -106,7 +106,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: VARCHAR
-        description: ""
+        description: Store where the sale occurred
         name: STORE_CODE
         nullable: true
         sourceColumnReferences:
@@ -120,7 +120,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: VARCHAR
-        description: ""
+        description: Product SKU sold
         name: SKU
         nullable: true
         sourceColumnReferences:
@@ -134,7 +134,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: VARCHAR
-        description: ""
+        description: Staff member who made the sale
         name: STAFF_ID
         nullable: true
         sourceColumnReferences:
@@ -148,7 +148,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: NUMBER(10,0)
-        description: ""
+        description: Units sold; negative for returns
         name: QUANTITY
         nullable: true
         sourceColumnReferences:
@@ -162,7 +162,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: NUMBER(5,4)
-        description: ""
+        description: Discount applied as a fraction (0-1)
         name: DISCOUNT_RATE
         nullable: true
         sourceColumnReferences:
@@ -176,7 +176,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: NUMBER(5,4)
-        description: ""
+        description: VAT rate applied to the line
         name: VAT_RATE
         nullable: true
         sourceColumnReferences:
@@ -190,7 +190,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: NUMBER(12,2)
-        description: ""
+        description: Line amount including VAT, in EUR
         name: AMOUNT_INCL_VAT_EUR
         nullable: true
         sourceColumnReferences:
@@ -204,7 +204,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: NUMBER(12,2)
-        description: ""
+        description: Line net amount excluding VAT, in EUR
         name: NET_AMOUNT_EXCL_VAT_EUR
         nullable: true
         sourceColumnReferences:
@@ -218,7 +218,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: BOOLEAN
-        description: ""
+        description: True when the line is a return (negative quantity)
         name: IS_RETURN
         nullable: true
         sourceColumnReferences:
@@ -232,7 +232,7 @@ operation:
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: TIMESTAMP_LTZ
-        description: ""
+        description: Timestamp the row was loaded into RAW
         name: LOADED_TS
         nullable: true
         sourceColumnReferences:
@@ -240,34 +240,28 @@ operation:
               - columnCounter: LOADED_TS
                 stepCounter: ae32a143-f371-42af-9a30-a507382a76f8
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 34d3ba54-e983-41f7-93dd-29ca7bf098e2
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp the row was first created
         isSystemCreateDate: true
         name: SYSTEM_CREATE_DATE
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 94fa77b4-5482-4343-920b-fe20a900fe32
           stepCounter: 6e80e866-e20e-4677-ab7e-cb1cb8edb5ce
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp the row was last updated
         isSystemUpdateDate: true
         name: SYSTEM_UPDATE_DATE
         nullable: true
@@ -275,7 +269,10 @@ operation:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
     cteString: ""
+    description: ""
+    destinationName: ""
     enabledColumnTestIDs: []
+    materializationOption: ""
     sourceMapping:
       - aliases:
           STG_SALES: ae32a143-f371-42af-9a30-a507382a76f8

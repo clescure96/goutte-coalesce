@@ -17,13 +17,13 @@ WITH "AGG" AS (
     GROUP BY 1, 2, 3, 4, 5
 )
 SELECT
-    CAST("A"."MONTH_DATE" AS DATE)                                          AS "MONTH_DATE",
-    CAST("A"."COUNTRY_CODE" AS VARCHAR(2))                                  AS "COUNTRY_CODE",
-    CAST("A"."CATEGORY" AS VARCHAR)                                         AS "CATEGORY",
-    CAST("A"."GENDER" AS VARCHAR)                                           AS "GENDER",
-    CAST("A"."COLLECTION" AS VARCHAR)                                       AS "COLLECTION",
-    CAST("A"."NET_REVENUE" AS NUMBER(14,2))                                 AS "NET_REVENUE_EXCL_VAT_EUR",
-    CAST("A"."UNITS_SOLD" AS NUMBER(10,0))                                  AS "UNITS_SOLD",
-    CAST("A"."UNITS_RETURNED" AS NUMBER(10,0))                              AS "UNITS_RETURNED",
-    CAST("A"."UNITS_RETURNED" / NULLIF("A"."UNITS_SOLD", 0) AS NUMBER(6,4)) AS "RETURN_RATE"
+    CAST("A"."MONTH_DATE" AS DATE)                                          AS "MONTH_DATE" @description("First day of the reporting month"),
+    CAST("A"."COUNTRY_CODE" AS VARCHAR(2))                                  AS "COUNTRY_CODE" @description("Country of the selling store"),
+    CAST("A"."CATEGORY" AS VARCHAR)                                         AS "CATEGORY" @description("Product category"),
+    CAST("A"."GENDER" AS VARCHAR)                                           AS "GENDER" @description("Target gender"),
+    CAST("A"."COLLECTION" AS VARCHAR)                                       AS "COLLECTION" @description("Product collection"),
+    CAST("A"."NET_REVENUE" AS NUMBER(14,2))                                 AS "NET_REVENUE_EXCL_VAT_EUR" @description("Monthly net revenue in EUR, excl. VAT"),
+    CAST("A"."UNITS_SOLD" AS NUMBER(10,0))                                  AS "UNITS_SOLD" @description("Units sold (returns excluded)"),
+    CAST("A"."UNITS_RETURNED" AS NUMBER(10,0))                              AS "UNITS_RETURNED" @description("Units returned"),
+    CAST("A"."UNITS_RETURNED" / NULLIF("A"."UNITS_SOLD", 0) AS NUMBER(6,4)) AS "RETURN_RATE" @description("Units returned as a fraction of units sold")
 FROM "AGG" "A"

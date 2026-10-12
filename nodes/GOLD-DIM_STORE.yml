@@ -15,17 +15,14 @@ operation:
   metadata:
     appliedNodeTests: []
     columns:
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: e1a94d21-399d-44d1-a9c5-6103b837a322
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: NUMBER
         defaultValue: ""
-        description: ""
+        description: Surrogate key of the store dimension
         isSurrogateKey: true
         name: DIM_STG_STORES_KEY
         nullable: true
@@ -38,7 +35,7 @@ operation:
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Unique store identifier
         isBusinessKey: true
         name: STORE_CODE
         nullable: true
@@ -53,7 +50,7 @@ operation:
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Store name
         isChangeTracking: true
         name: STORE_NAME
         nullable: true
@@ -68,7 +65,7 @@ operation:
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: City where the store is located
         name: CITY
         nullable: true
         sourceColumnReferences:
@@ -82,7 +79,7 @@ operation:
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: VARCHAR(2)
-        description: ""
+        description: Country of the store (FR, DE, ES)
         name: COUNTRY_CODE
         nullable: true
         sourceColumnReferences:
@@ -96,7 +93,7 @@ operation:
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: Region/area the store belongs to
         name: REGION
         nullable: true
         sourceColumnReferences:
@@ -110,7 +107,7 @@ operation:
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: VARCHAR(16777216)
-        description: ""
+        description: "Store format: flagship, city, or outlet"
         isChangeTracking: true
         name: STORE_TYPE
         nullable: true
@@ -125,7 +122,7 @@ operation:
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: NUMBER(6,0)
-        description: ""
+        description: Sales floor surface in square meters
         isChangeTracking: true
         name: SURFACE_SQM
         nullable: true
@@ -140,7 +137,7 @@ operation:
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: DATE
-        description: ""
+        description: Date the store opened
         name: OPENING_DATE
         nullable: true
         sourceColumnReferences:
@@ -148,102 +145,84 @@ operation:
               - columnCounter: OPENING_DATE
                 stepCounter: 2a3c4af8-ccf4-4d83-bcd0-22829e4ac9f0
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 8d7131a8-dba8-4e14-96f8-93caaeb4219a
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: NUMBER
         defaultValue: ""
-        description: ""
+        description: SCD2 version number of the row
         isSystemVersion: true
         name: SYSTEM_VERSION
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 8604ae60-d2a6-495a-b564-d27ea5c40dde
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: VARCHAR
         defaultValue: ""
-        description: ""
+        description: "'Y' on the current version, 'N' on expired versions"
         isSystemCurrentFlag: true
         name: SYSTEM_CURRENT_FLAG
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 7e081a5c-01f5-4766-8ed9-d9a0dbe04ca8
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp this version became effective
         isSystemStartDate: true
         name: SYSTEM_START_DATE
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: a96efb64-3d89-4d4e-83ca-828a848dfbcf
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp this version was expired (far-future while current)
         isSystemEndDate: true
         name: SYSTEM_END_DATE
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 1ffb5aad-1e6a-46d0-8a55-97325814f20d
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp the row was first created
         isSystemCreateDate: true
         name: SYSTEM_CREATE_DATE
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: 1e6628cc-08eb-4713-b446-52d4ef7e8252
           stepCounter: e1cbb19a-96be-42dd-91ec-9e2d30236704
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
-        description: ""
+        description: Timestamp the row was last updated
         isSystemUpdateDate: true
         name: SYSTEM_UPDATE_DATE
         nullable: true
@@ -251,7 +230,10 @@ operation:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
     cteString: ""
+    description: ""
+    destinationName: ""
     enabledColumnTestIDs: []
+    materializationOption: ""
     sourceMapping:
       - aliases:
           STG_STORES: 2a3c4af8-ccf4-4d83-bcd0-22829e4ac9f0
